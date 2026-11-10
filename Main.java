@@ -82,16 +82,18 @@ public class Main {
                     break;
 
                 case 4:
-                    List<Evento> ordenados = gerenciador.getEventosOrdenados();
-                    if (ordenados.isEmpty()) {
-                        System.out.println("Nenhum evento cadastrado.");
-                    } else {
-                        System.out.println("\n--- LISTA DE EVENTOS ---");
-                        for (int i = 0; i < ordenados.size(); i++) {
-                            System.out.println((i + 1) + ". " + ordenados.get(i).exibirResumo());
-                        }
-                    }
-                    break;
+            List<Evento> ordenados = gerenciador.getEventosOrdenados();
+            if (ordenados.isEmpty()) {
+                System.out.println("\nNenhum evento cadastrado.");
+            } else {
+                System.out.println("\n--- LISTA DE EVENTOS ---");
+                for (int i = 0; i < ordenados.size(); i++) {
+                    System.out.println((i + 1) + ". " + ordenados.get(i).exibirResumo());
+                }
+            }
+            System.out.println("\nPressione ENTER para voltar ao menu...");
+            scanner.nextLine();
+            break;
 
                 case 5:
                     if (usuarioAtual == null) {
